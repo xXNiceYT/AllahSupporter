@@ -42,7 +42,7 @@ class Main extends PluginBase implements Listener {
 
     public function loadPack() : void {
         $manager = $this->getServer()->getResourcePackManager();
-        $this->pack = $pack = new ZippedResourcePack($this->getDataFolder() . "resource.mcpack");
+        $pack = new ZippedResourcePack($this->getDataFolder() . "resource.mcpack");
 
         $reflection = new ReflectionClass($manager);
 
