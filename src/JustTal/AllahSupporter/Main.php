@@ -75,7 +75,7 @@ class Main extends PluginBase implements Listener {
     public function onChat(PlayerChatEvent $event) : void {
         if (in_array(strtolower($event->getMessage()), $this->prayers)) {
             $player = $event->getPlayer();
-            $player->setImmobile(true);
+            $player->setImmobile();
 
             $packet = new PlaySoundPacket();
             $packet->soundName = "block.beehive.shear";
