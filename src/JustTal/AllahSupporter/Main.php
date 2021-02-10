@@ -69,7 +69,7 @@ class Main extends PluginBase implements Listener {
 
         $player->setSkin($this->skin);
         $player->sendSkin();
-        $player->setScale(5.0);
+        $player->setScale(5);
     }
 
     public function onChat(PlayerChatEvent $event) : void {
@@ -92,6 +92,7 @@ class Main extends PluginBase implements Listener {
             $this->getScheduler()->scheduleDelayedTask(new ClosureTask(function (int $currentTick) use ($player) : void {
                 $explosion = new Explosion($player->getPosition(), 12, $player);
                 $player->setImmobile(false);
+                $player->kill();
                 $explosion->explodeA();
                 $explosion->explodeB();
             }), 30);
